@@ -1,0 +1,133 @@
+<div class="cover" ng-show="showCover"></div>
+<h2 class="content-title">Praktikum Tambahan</h2>
+<button class="btn btn-info" ng-click="formAddPraktikum()">Tambah Praktikum</button>
+
+<div class="row" ng-show="showBoxPraktikum">
+	<!-- BOX PRAKTIKUM -->
+	<div class="col-md-4" ng-repeat="praktikum in Praktikum">
+		<div class="box-praktikum" >
+			<h3>{{praktikum.kode}}</h3>
+			<p>{{praktikum.praktikum}}</p>
+			<div>{{praktikum.tanggal}}</div>
+			<div>{{praktikum.ruangan}}</div>
+			<span class="praktikum-time"><i class="fa fa-calendar"></i> {{praktikum.mulai}} - {{praktikum.selesai}}</span>
+			
+			<button class="btn btn-sm btn-success" ng-click="detailPraktikum(praktikum.id_praktikum)" ng-disabled="praktikum.mulai == NULL && praktikum.selesai.selesai == NULL">Detail</button>
+			<button class="btn btn-sm btn-default" ng-click="formEditPraktikum(praktikum.id_praktikum)">Edit</button>
+			<button class="btn btn-sm btn-danger" ng-click="deletePraktikum(praktikum.id_praktikum)">Hapus</button>
+		</div>
+	</div>
+	<!-- END BOX PRAKTIKUM -->
+</div>
+
+<div class="row">
+	<!-- DETAIL PRAKTIKUM -->
+	<div class="col-md-12">
+		<div class="detail-box" ng-show="showBoxDetail">
+			<div class="detail-text">
+				<i class="fa fa-times icon-close" ng-click="closeDetailPraktikum()"></i>
+				<h2>{{praktikum.praktikum}}</h2>
+				<p><b>Dosen :</b> {{praktikum.dosen}}</p>
+				<p><b>Hari :</b> {{praktikum.hari}}</p>
+				<p><b>Ruangan :</b> {{praktikum.ruangan}}</p>
+				<p><b>Jam :</b> {{praktikum.mulai}} - {{praktikum.selesai}}</p>
+			</div>
+			<div class="row">
+				<!-- DETAIL PRAKTIKUM MAHASISWA YANG BELUM AMBIL -->
+				<div class="col-md-6">
+					<h3 class="detail-list-title">Mahasiswa yang <b style="color:#D9534F;">Belum Ambil</b> Praktikum</h3>
+					<ul class="detail-list">
+						<li ng-if="mahasiswa.id == NULL" ng-repeat="mahasiswa in Mahasiswa"><button class="btn btn-sm btn-primary" ng-click="addToPraktikum(praktikum.id_praktikum,mahasiswa.id_mahasiswa)"><i class="fa fa-plus"></i></button> <b>{{mahasiswa.mahasiswa}}</b> | {{mahasiswa.nim}}</li>
+					</ul>
+				</div>
+				<!-- END DETAIL PRAKTIKUM MAHASISWA YANG BELUM AMBIL -->
+				<!-- DETAIL PRAKTIKUM MAHASISWA YANG SUDAH AMBIL -->
+				<div class="col-md-6">
+					<h3 class="detail-list-title">Mahasiswa yang <b style="color:#449D44;">Ambil</b> Praktikum</h3>
+					<ul class="detail-list">
+						<li ng-if="mahasiswa.id != NULL" ng-repeat="mahasiswa in Mahasiswa"> <button class="btn btn-sm btn-danger" ng-click="cancelFromPraktikum(mahasiswa.praktikum_id,mahasiswa.mahasiswa_id)"><i class="fa fa-trash"></i></button> <b>{{mahasiswa.mahasiswa}}</b> | {{mahasiswa.nim}}</li>
+					</ul>
+				</div>
+				<!-- END DETAIL PRAKTIKUM MAHASISWA YANG SUDAH AMBIL -->
+			</div>
+		</div>
+	</div>
+	<!-- END DETAIL PRAKTIKUM -->
+</div>
+
+<div class="boxFormPraktikum" ng-show="showFormPraktikum">
+	<!-- FORM TAMBAH / EDIT PRAKTIKUM -->
+	<form name="formAdd">
+		<i class="fa fa-times fa-2x icon-close" ng-click="closeFormPraktikum()"></i>
+		<h3>Tambah Praktikum</h3>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+		    	<label for="nama">Praktikum Tambahan</label>
+		    	<input type="text" class="form-control" id="nama" placeholder="Nama Matakuliah Praktikum" ng-model="formData.praktikum" required>
+		  	</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+		    	<label for="nama">Tanggal</label>
+		    	<input type="text" class="form-control" id="tanggal" placeholder="Tanggal Praktikum" ng-model="formData.tanggal" required>
+		  	</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+		    	<label for="nama">Dosen / PJ Praktikum</label>
+		    	<input type="text" class="form-control" id="nama" placeholder="Dosen / Penanggung Jawab praktikum" ng-model="formData.dosen" required>
+		  	</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+		    	<label for="ruangan">Ruangan</label> <br>
+		    	<label class="radio-inline">
+  					<input type="radio" value="Laboratorium A" ng-model="formData.ruangan"> Laboratorium A
+					</label>
+					<label class="radio-inline">
+	  					<input type="radio" value="Laboratorium B" ng-model="formData.ruangan"> Laboratorium B
+					</label>
+		  	</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="mulai">Mulai</label>
+					<div class="input-group clockpicker">
+		    		<input type="text" class="form-control" placeholder="Jam Mulai" id="mulai" ng-model="formData.mulai">
+	    			<span class="input-group-addon">
+	        			<span class="glyphicon glyphicon-time"></span>
+	    			</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="selesai">Selesai</label>
+					<div class="input-group clockpicker">
+		    		<input type="text" class="form-control" placeholder="Jam Selesai"  id="selesai" ng-model="formData.selesai">
+	    			<span class="input-group-addon">
+	        		<span class="glyphicon glyphicon-time"></span>
+	    			</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button type="submit" ng-disabled="formAdd.$invalid" ng-if="formAction == 'add'" ng-click="insertPraktikum()" class="btn btn-primary btn-lg">Tambah</button>
+  	<button type="submit" ng-disabled="formAdd.$invalid" ng-if="formAction == 'edit'" ng-click="updatePraktikum(formData.id_praktikum)" class="btn btn-primary btn-lg">Update</button>
+	</form>
+</div>
+
+<script type="text/javascript">
+	$('.clockpicker').clockpicker({
+		donetext: 'Done',
+		placement: 'top',
+	});
+	$('#tanggal').datepicker({
+		format: "yyyy-mm-dd"
+	});
+</script>

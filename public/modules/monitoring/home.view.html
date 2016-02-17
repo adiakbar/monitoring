@@ -1,0 +1,52 @@
+<div class="container" style="max-width:1200px;">
+	<div class="row">
+		<!-- GRID LABORATORIUM ALL -->
+		<div class="col-md-6">
+			<div class="row">
+				<!-- GRID LABORATORIUM A -->
+				<div class="col-md-12">
+					<h3 class="lab-title">Laboratorium A</h3>
+					<div class="box-jadwal">
+						<p><b>Jadwal:</b> {{ketA.praktikum}}</p>
+						<p><b>Jam:</b> {{ketA.mulai}} - {{ketA.selesai}}</p>
+					</div>
+					<ul class="list-komputer">
+						<li ng-repeat = "lab in labA">
+							<h4 class="list-title">{{lab.komputer}}</h4>
+							<i class="fa fa-desktop fa-4x" ng-class="lab.kondisi"></i>
+							<p><i class="fa fa-user"></i> {{lab.mahasiswa}}</p>
+							<p><i class="fa fa-clock-o"></i> {{lab.waktu}}</p>
+						</li>
+					</ul>
+				</div>
+				<!-- END GRID LABORATORIUM A -->
+				<!-- GRID LABORATORIUM B -->
+				<div class="col-md-12">
+					<h3 class="lab-title">Laboratorium B</h3>
+					<div class="box-jadwal">
+						<p><b>Jadwal:</b> {{ketB.praktikum}}</p>
+						<p><b>Jam:</b> {{ketB.mulai}} - {{ketB.selesai}}</p>
+					</div>
+					<ul class="list-komputer">
+						<li ng-repeat = "lab in labB">
+							<h4 class="list-title">{{lab.komputer}}</h4>
+							<i class="fa fa-desktop fa-4x" ng-class="lab.kondisi"></i>
+							<p><i class="fa fa-user"></i> {{lab.mahasiswa}}</p>
+							<p><i class="fa fa-clock-o"></i> {{lab.waktu}}</p>
+						</li>
+					</ul>
+				</div>
+				<!-- END GRID LABORATORIUM B -->
+			</div>
+		</div>
+		<!-- END GRID LABORATORIUM ALL -->
+		<div class="col-md-6">
+			<a ui-sref="log" class="button-log">Log Aplikasi</a>
+			<div class="box-statistik">
+				<h3 class="lab-title">Statistik Pengguna Laboratorium Komputer Bulan {{bulan}}</h3>
+				<canvas id="bar" class="chart chart-bar" chart-data="chartData.data" chart-labels="chartData.labels" chart-legend="true" chart-series="chartData.series" chart-colours="colors" style="margin-top:30px;"></canvas>
+			</div>
+			
+		</div>
+	</div>
+</div>

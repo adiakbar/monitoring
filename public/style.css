@@ -1,0 +1,198 @@
+header{
+	background: #01CEE6;
+	height: 80px;
+	color: #fff;
+	padding-top: 13px;
+}
+header .fa{
+	float: left;
+	margin-right: 15px;
+}
+header h3{
+	margin: 0;
+	font-size: 20px;
+}
+header h1{
+	margin: 0;
+	font-size: 30px;
+}
+.lab-title{
+	margin-top: 20px;
+	color: #19B5FE;
+	font-size: 25px;
+	display: inline-block;
+}
+.box-jadwal{
+	float: right;
+	margin-top: 20px;
+	margin-right: 30px;
+	font-size: 12px;
+}
+.box-jadwal p{
+	margin-bottom: 3px;
+}
+.list-komputer{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.list-komputer li{
+	float: left;
+	background: #E8ECEF;
+	text-align: center;
+	max-width: 160px;
+	width: 100%;
+	padding: 20px 20px 25px;
+	margin-right: 25px;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	border-bottom: 3px solid #333333;
+	position: relative;
+	margin-bottom: 20px;
+}
+.list-komputer .fa-desktop{
+	display: block;
+	margin-bottom: 15px;
+}
+.list-komputer p{
+	border-bottom: 1px solid #b9b9b9;
+	padding-bottom: 3px;
+	margin: 5px;
+	font-size: 13px;
+}
+.list-title{
+	background: #333;
+	color: #b9b9b9;
+	position: absolute;
+	bottom: -25px;
+	left: 0;
+	display: inline-block;
+	padding: 8px 15px;
+}
+.on{
+	color: #FE8971;
+}
+.off{
+	color: #333333;
+}
+.box-statistik {
+	background: #f1f1f1;
+	padding: 15px 25px;
+	margin-top: 20px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.sidebarmenu {
+	background: #f1f1f1;
+	padding: 15px 20px;
+	margin-top: 20px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.button-log {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px;
+	color: #fff;
+	background: #01CEE6;
+}
+.sidebartitle {
+	margin-top: 0;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+	color: #aaa;
+	font-size: 35px;
+}
+.sidebarlist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sidebarlist li a{
+	color: #aaa;
+	display: block;
+	padding: 8px 0px;
+	font-size: 13px;
+	font-size: 16px;
+}
+.sidebarlist li a:hover {
+	text-decoration: none;
+	background: #ccc;
+	padding: 8px 10px;
+	color: #fff;
+}
+.content-title {
+	margin-top: 20px;
+	color: #19B5FE;
+	font-size: 40px;
+}
+.box-praktikum {
+	padding: 10px 0px;
+	margin-top: 0px;
+	border-bottom: 1px solid  rgba(0,0,0,0.12);
+	border-top: 1px solid  rgba(0,0,0,0.12);
+	margin-top: 10px;
+}
+.box-praktikum h3 {
+	margin-top: 0;
+	font-size: 30px;
+}
+.box-praktikum p {
+	font-weight: 700;
+	margin-bottom: 0;
+}
+.praktikum-time {
+	display: block;
+	margin-bottom: 10px;
+}
+.icon-close {
+	font-size: 45px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	background: #C9302C;
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+.detail-box h2 {
+	margin-top: 15px;
+}
+.detail-box p {
+	margin-bottom: 0;
+}
+.detail-list-title {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.detail-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.detail-list li {
+	margin-bottom: 10px;
+}
+.cover{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.3);
+	height: 100%;
+	width:100%;
+	z-index: 20;
+}
+.boxFormPraktikum {
+	z-index: 30;
+	position: absolute;
+	top: 0px;
+	width: 1000px;
+	left: calc(50% - 600px);
+	background: #fff;
+	padding: 20px;
+}

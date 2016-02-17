@@ -1,0 +1,61 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<form role="form" style="margin-top:20px;">
+				<legend>Form title</legend>
+				<div class="form-group">
+					<label for="">Nama Mahasiswa</label>
+					<select ng-model="rfid" id="input" class="form-control">
+						<option value="">--- Pilih Mahasiswa ----</option>
+						<option ng-repeat="mahasiswa in Mahasiswa" value="{{mahasiswa.rfid}}">{{mahasiswa.mahasiswa}}</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="">Ruangan</label>
+					<select ng-model="ruangan" id="input" class="form-control">
+						<option value="">--- Pilih Laboratorium ----</option>
+						<option value="Laboratorium A">Laboratorium A</option>
+						<option value="Laboratorium B">Laboratorium B</option>
+					</select>
+				</div>
+				<div class="form-group">
+		    	<label for="">Tanggal</label>
+		    	<input type="text" class="form-control" id="tanggal" placeholder="Tanggal Praktikum" ng-model="tanggal" required>
+		  	</div>
+				<button class="btn btn-primary" ng-click="submitLog()">Submit</button>
+			</form>
+		</div>
+		<div class="col-md-9">
+			<table class="table table-striped table-bordered" style="margin-top:20px;">
+				<thead>
+					<td><b>Nama</b></td>
+					<td><b>Tanggal</b></td>
+					<td><b>Hari</b></td>
+					<td><b>Ruangan</b></td>
+					<td><b>Komputer</b></td>
+					<td><b>Jadwal</b></td>
+					<td><b>Mulai</b></td>
+					<td><b>Selesai</b></td>
+				</thead>
+				<tbody>
+					<tr ng-repeat="log in Log">
+						<td>{{log.mahasiswa}}</td>
+						<td>{{log.tanggal | date}}</td>
+						<td>{{log.hari}}</td>
+						<td>{{log.ruangan}}</td>
+						<td>{{log.komputer}}</td>
+						<td>{{log.jadwal}}</td>
+						<td>{{log.mulai}}</td>
+						<td>{{log.selesai}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$('#tanggal').datepicker({
+		format: "yyyy-mm-dd"
+	});
+</script>
