@@ -1,0 +1,33 @@
+{
+  "name": "monitoring-realtime",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ady21/monitoring",
+  "authors": [
+    "adi akbar <adyzeta21@gmail.com>"
+  ],
+  "description": "Sistem Monitoring Realtime dari API Penjadwalan",
+  "keywords": [
+    "monitoring",
+    "realtime",
+    "penjadwalan"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-chart.js": "~0.8.5",
+    "angular-cookies": "~1.4.3",
+    "angular-route": "~1.4.3",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.5",
+    "clockpicker": "~0.0.7",
+    "fontawesome": "~4.4.0",
+    "moment": "~2.10.6"
+  }
+}
