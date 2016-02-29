@@ -18,13 +18,19 @@ io.on('connection',function(socket) {
 	/* Menerima status ON kondisi dari python raspberry ketika ada yang melakukan scan */
 	socket.on('status_added',function(status) {
 		/* Mengirim status ke angular client untuk kondisi ON */
-		io.emit('refresh_add',status);
+		io.emit('refresh_add', status);
 	});
 
 	/* Menerima status OFF kondisi dari python raspberry ketika ada mematikan komputer */
 	socket.on('status_updated',function(status) {
 		/* Mengirim status ke angular client untuk kondisi OFF */
-		io.emit('refresh_update',status);
+		io.emit('refresh_update', status);
+	});
+
+	/* Memberikan Notifikasi pada proses pemindaian */
+	socket.on('status_notif', function(status) {
+		/* Mengirim Notifikasi pada aplikasi */
+		io.emit('refresh_notif', status);
 	});
 });
 

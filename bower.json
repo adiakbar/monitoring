@@ -26,6 +26,7 @@
     "angular-route": "~1.4.3",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.5",
+    "bootstrap-datepicker": "~1.6.0",
     "clockpicker": "~0.0.7",
     "fontawesome": "~4.4.0",
     "moment": "~2.10.6"

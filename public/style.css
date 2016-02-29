@@ -196,3 +196,29 @@ header h1{
 	background: #fff;
 	padding: 20px;
 }
+.box-notifikasi {
+	position: absolute;
+	right: 0;
+	top: 20px;
+	background: #f1f1f1;
+	padding: 10px 20px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/*Mobile Phone*/
+@media (max-width: 768px) {
+
+header h3{
+	font-size: 16px;
+	padding-top: 15px;
+}
+header h1, .box-jadwal {
+	display: none;
+}
+.list-komputer li {
+	max-width: 300px;
+	margin-bottom: 35px;
+	/*height: 200px;*/
+}
+
+}

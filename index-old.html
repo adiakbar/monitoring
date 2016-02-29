@@ -1,7 +1,9 @@
-<div class="container">
+<div class="container" style="max-width:1200px;">
 	<!-- Notifikasi -->
-	<div class="box-notifikasi" ng-show="notif">
-		[Nama Mahasiswa] Scanning RFID sesuai jadwal pada Ruangan yang sudah penuh
+	<div class="box-notifikasi">
+		[Nama Mahasiswa] Melakukan Scanning RFID sesuai jadwal pada Ruangan yang sudah penuh
+		<!-- <p>[Nama Mahasiswa] Tidak Terdaftar pada jadwal</p>
+		<p>[ID RFID] tidak terdaftar pada sistem</p> -->
 	</div>
 	<!-- End Notifikasi -->
 	<div class="row">
@@ -35,7 +37,7 @@
 					<ul class="list-komputer">
 						<li ng-repeat = "lab in labB">
 							<h4 class="list-title">{{lab.komputer}}</h4>
-							<i class="fa fa-desktop fa-4x" ng-class="lab.kondisi"></i>
+							<i class="fa fa-desktp fa-4x" ng-class="lab.kondisi"></i>
 							<p><i class="fa fa-user"></i> {{lab.mahasiswa}}</p>
 							<p><i class="fa fa-clock-o"></i> {{lab.waktu}}</p>
 						</li>

@@ -1,9 +1,10 @@
 'use strict';
 
-var baseUrl = 'http://localhost:3000/api';
+var token = '1a2b3c4d5e6f7g8h9i10j11k12l13m14n15o16p17q18r19s20';
+var baseUrl = 'http://localhost:3000/api/'+token;
 moment.locale('id');
 
-/* Cari cara gimana bisa include file js lain 
+/* Cari cara gimana bisa include file js lain
 tanpa perlu kita deklarasikann semua di index */
 
 angular.module('Monitoring',[]);
