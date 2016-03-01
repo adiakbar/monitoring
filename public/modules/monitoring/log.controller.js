@@ -11,8 +11,8 @@ angular.module('Monitoring')
 		// console.log($scope.formData);
 		var rfid = $scope.rfid;
 		var ruangan = $scope.ruangan;
-		var tanggal = $scope.tanggal;
-		$http.get(baseUrl+'/action/log?rfid='+rfid+'&ruangan='+ruangan+'&tanggal='+tanggal)
+		// var tanggal = $scope.tanggal;
+		$http.get(baseUrl+'/action/log?rfid='+rfid+'&ruangan='+ruangan)
 			.success(function(data) {
 				$scope.Log = data;
 				// console.log(data);
